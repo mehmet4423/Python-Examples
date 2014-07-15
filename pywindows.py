@@ -11,7 +11,7 @@ yukseklik = 600
 ekran = pygame.display.set_mode((genislik,yukseklik))
 baslik = pygame.display.set_caption("Çakma Windows Ekran Koruyucu =)")
 
-kurbaga = pygame.image.load("windows.png")
+logo = pygame.image.load("windows.png")
 arka_plan = pygame.draw.line(ekran,(255,255,255),(0,0),(0, yukseklik),genislik*2)
 
 
@@ -21,7 +21,7 @@ k_x = 1
 k_y = 300
 yukari = 1
 ilerle = 1
-ekran.blit(kurbaga,(k_x,k_y))
+ekran.blit(logo,(k_x,k_y))
 pygame.display.flip()
 while dongu == 1:
 	for olay in pygame.event.get():
@@ -31,10 +31,10 @@ while dongu == 1:
 
 	if k_x == 0:
 		ilerle = 1
-		kurbaga = pygame.transform.flip(kurbaga,1,0)
+		logo = pygame.transform.flip(logo,1,0)
 	if k_x == 700:
 		ilerle = 0
-		kurbaga = pygame.transform.flip(kurbaga,1,0)
+		logo = pygame.transform.flip(logo,1,0)
 
 	if ilerle == 1:
 		k_x = k_x + 1	
@@ -57,5 +57,5 @@ while dongu == 1:
 
 	time.sleep(0.005)
 	arka_plan = pygame.draw.line(ekran,(255,255,255),(0,0),(0, yukseklik),genislik*2)
-	ekran.blit(kurbaga,(k_x,k_y))
+	ekran.blit(logo,(k_x,k_y))
 	pygame.display.flip()
